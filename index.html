@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrecisionForge Industries | High-Quality Manufacturing Solutions</title>
+  <meta name="description" content="ISO-certified precision manufacturing company delivering high-quality industrial components across India. Get a free quote today." />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <!-- AOS Animate -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <!-- Google Fonts: Barlow Condensed (industrial headings) + Nunito Sans (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --steel: #1F2933;
+      --graphite: #4B5563;
+      --white-bg: #F5F7F9;
+      --blue: #2563EB;
+      --orange: #F97316;
+      --border: rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--white-bg); color: var(--steel); scroll-behavior: smooth; }
+    h1, h2, h3, h4, h5 { font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.5px; }
+
+    /* NAVBAR */
+    .navbar { background: var(--steel) !important; border-bottom: 2px solid var(--blue); }
+    .navbar-brand { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; color: #fff !important; letter-spacing: 1px; }
+    .navbar-brand span { color: var(--orange); }
+    .nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 600; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; }
+    .nav-link:hover { color: var(--orange) !important; }
+    .btn-quote-nav { background: var(--orange); color: #fff !important; border-radius: 2px; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.8px; text-transform: uppercase; padding: 7px 18px; transition: background 0.2s; }
+    .btn-quote-nav:hover { background: #ea6c08; }
+
+    /* HERO */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(31,41,51,0.93) 0%, rgba(31,41,51,0.75) 60%, rgba(37,99,235,0.25) 100%),
+        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80') center/cover no-repeat;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .hero-eyebrow { color: var(--orange); font-size: 0.82rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+    .hero-title { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800; line-height: 1.05; color: #fff; }
+    .hero-title span { color: var(--orange); }
+    .hero-sub { color: rgba(255,255,255,0.78); font-size: 1.05rem; max-width: 520px; line-height: 1.7; }
+    .btn-primary-hero { background: var(--orange); border: none; border-radius: 2px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; padding: 14px 32px; transition: all 0.2s; }
+    .btn-primary-hero:hover { background: #ea6c08; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249,115,22,0.35); }
+    .btn-outline-hero { background: transparent; border: 1.5px solid rgba(255,255,255,0.55); color: #fff; border-radius: 2px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; padding: 13px 28px; transition: all 0.2s; }
+    .btn-outline-hero:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+    .trust-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; padding: 8px 14px; font-size: 0.78rem; color: rgba(255,255,255,0.85); font-weight: 700; letter-spacing: 0.5px; white-space: nowrap; }
+    .trust-badge i { color: var(--orange); }
+
+    /* TRUST STRIP */
+    .trust-strip { background: var(--blue); border-bottom: 3px solid #1d4ed8; }
+    .trust-strip-item { color: #fff; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; padding: 18px 0; }
+    .trust-strip-item i { font-size: 1.1rem; color: var(--orange); }
+    .trust-divider { width: 1px; background: rgba(255,255,255,0.25); height: 28px; }
+
+    /* SECTION HEADERS */
+    .section-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--steel); line-height: 1.1; }
+    .section-divider { width: 48px; height: 3px; background: var(--orange); border-radius: 2px; margin: 14px 0 0; }
+    .section-divider.center { margin: 14px auto 0; }
+
+    /* ABOUT */
+    .about-stat { border-left: 3px solid var(--orange); padding-left: 16px; }
+    .about-stat .number { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--steel); line-height: 1; }
+    .about-stat .label { font-size: 0.8rem; font-weight: 700; color: var(--graphite); text-transform: uppercase; letter-spacing: 0.5px; }
+    .about-img-wrap { border: 3px solid var(--blue); border-radius: 3px; overflow: hidden; position: relative; }
+    .about-img-badge { position: absolute; bottom: 16px; left: 16px; background: var(--orange); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 800; padding: 8px 14px; border-radius: 2px; letter-spacing: 0.5px; }
+
+    /* CARDS */
+    .product-card { border: 1px solid var(--border); border-radius: 3px; overflow: hidden; transition: all 0.25s; background: #fff; }
+    .product-card:hover { border-color: var(--blue); box-shadow: 0 8px 32px rgba(37,99,235,0.12); transform: translateY(-4px); }
+    .product-card img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.4s; }
+    .product-card:hover img { transform: scale(1.04); }
+    .product-card .card-body { padding: 20px; }
+    .product-card .cat-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue); background: #eff6ff; padding: 3px 10px; border-radius: 2px; display: inline-block; margin-bottom: 8px; }
+    .product-card h5 { font-size: 1.2rem; font-weight: 700; margin-bottom: 6px; }
+    .product-card p { font-size: 0.85rem; color: var(--graphite); line-height: 1.6; margin-bottom: 14px; }
+    .btn-view { font-size: 0.8rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1.5px solid transparent; transition: border-color 0.2s; }
+    .btn-view:hover { border-color: var(--blue); }
+    .filter-btn { border: 1.5px solid var(--border); background: #fff; color: var(--graphite); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 2px; padding: 7px 18px; transition: all 0.2s; cursor: pointer; }
+    .filter-btn.active, .filter-btn:hover { background: var(--steel); color: #fff; border-color: var(--steel); }
+
+    /* INDUSTRIES */
+    .industry-card { border: 1px solid var(--border); border-radius: 3px; padding: 28px 20px; text-align: center; background: #fff; transition: all 0.25s; cursor: default; }
+    .industry-card:hover { border-color: var(--orange); box-shadow: 0 6px 24px rgba(249,115,22,0.12); }
+    .industry-card i { font-size: 2rem; color: var(--graphite); transition: color 0.25s; }
+    .industry-card:hover i { color: var(--orange); }
+    .industry-card h6 { font-size: 0.9rem; font-weight: 700; margin-top: 12px; margin-bottom: 0; color: var(--steel); }
+
+    /* PROCESS */
+    .process-section { background: var(--steel); }
+    .process-step { position: relative; }
+    .step-num { width: 52px; height: 52px; border-radius: 50%; background: var(--orange); color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0 auto 14px; }
+    .step-icon { font-size: 1.5rem; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+    .step-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; color: #fff; }
+    .step-desc { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+    .step-connector { position: absolute; top: 26px; left: calc(50% + 28px); width: calc(100% - 56px); height: 1px; border-top: 1.5px dashed rgba(255,255,255,0.2); }
+
+    /* WHY US */
+    .usp-card { border: 1px solid var(--border); border-radius: 3px; padding: 28px 22px; background: #fff; transition: all 0.25s; }
+    .usp-card:hover { border-color: var(--blue); box-shadow: 0 6px 24px rgba(37,99,235,0.1); }
+    .usp-icon-wrap { width: 52px; height: 52px; border-radius: 3px; background: #eff6ff; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .usp-icon-wrap i { font-size: 1.3rem; color: var(--blue); }
+    .usp-card h5 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+    .usp-card p { font-size: 0.85rem; color: var(--graphite); line-height: 1.6; margin-bottom: 0; }
+
+    /* CERTIFICATIONS */
+    .cert-section { background: #fff; }
+    .cert-card { border: 1px solid var(--border); border-radius: 3px; padding: 24px; text-align: center; }
+    .cert-icon { font-size: 2.5rem; color: var(--blue); margin-bottom: 10px; }
+    .cert-card h6 { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+    .cert-card p { font-size: 0.8rem; color: var(--graphite); margin-bottom: 0; }
+
+    /* TESTIMONIALS */
+    .review-card { border: 1px solid var(--border); border-radius: 3px; padding: 28px 24px; background: #fff; position: relative; }
+    .review-card::before { content: '"'; font-family: 'Barlow Condensed', sans-serif; font-size: 5rem; color: var(--orange); opacity: 0.12; position: absolute; top: 8px; left: 18px; line-height: 1; }
+    .stars { color: var(--orange); font-size: 0.9rem; margin-bottom: 12px; }
+    .review-text { font-size: 0.88rem; color: var(--graphite); line-height: 1.7; margin-bottom: 18px; }
+    .reviewer-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; }
+    .reviewer-role { font-size: 0.78rem; color: var(--graphite); }
+    .reviewer-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--blue); }
+
+    /* GALLERY */
+    .gallery-img { width: 100%; height: 200px; object-fit: cover; border-radius: 2px; transition: all 0.3s; cursor: pointer; border: 2px solid transparent; }
+    .gallery-img:hover { border-color: var(--orange); transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
+    /* FAQ */
+    .accordion-button { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--steel) !important; letter-spacing: 0.3px; }
+    .accordion-button:not(.collapsed) { background: #eff6ff; color: var(--blue) !important; box-shadow: none; }
+    .accordion-button::after { filter: none; }
+    .accordion-item { border: 1px solid var(--border); border-radius: 3px !important; margin-bottom: 8px; }
+    .accordion-body { font-size: 0.88rem; color: var(--graphite); line-height: 1.7; }
+
+    /* CONTACT */
+    .contact-section { background: var(--steel); }
+    .form-control, .form-select { background: rgba(255,255,255,0.07) !important; border: 1px solid rgba(255,255,255,0.15) !important; color: #fff !important; border-radius: 2px; font-size: 0.9rem; }
+    .form-control::placeholder { color: rgba(255,255,255,0.45); }
+    .form-control:focus { background: rgba(255,255,255,0.1) !important; box-shadow: 0 0 0 2px rgba(37,99,235,0.4) !important; border-color: var(--blue) !important; }
+    .form-label { color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .contact-info-item i { color: var(--orange); font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+    .contact-info-item .ci-label { font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+    .contact-info-item .ci-value { color: #fff; font-size: 0.9rem; font-weight: 600; }
+    .map-embed { border-radius: 3px; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); }
+    .btn-wa { background: #25D366; border: none; border-radius: 2px; color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; font-size: 0.85rem; padding: 12px 24px; transition: all 0.2s; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .btn-wa:hover { background: #1fb857; color: #fff; }
+    .btn-submit { background: var(--orange); border: none; border-radius: 2px; color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; font-size: 0.88rem; padding: 13px 28px; transition: all 0.2s; width: 100%; }
+    .btn-submit:hover { background: #ea6c08; }
+
+    /* FOOTER */
+    footer { background: #111820; border-top: 3px solid var(--orange); }
+    .footer-brand { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; color: #fff; }
+    .footer-brand span { color: var(--orange); }
+    .footer-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .footer-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-link { font-size: 0.85rem; color: rgba(255,255,255,0.5); text-decoration: none; display: block; padding: 4px 0; transition: color 0.2s; }
+    .footer-link:hover { color: var(--orange); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .social-link { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; display: inline-flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; transition: all 0.2s; }
+    .social-link:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* FLOATING ELEMENTS */
+    .float-wa { position: fixed; bottom: 28px; right: 24px; z-index: 999; background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 20px rgba(37,211,102,0.45); text-decoration: none; transition: transform 0.2s; }
+    .float-wa:hover { transform: scale(1.1); color: #fff; }
+    .float-quote { position: fixed; bottom: 96px; right: 22px; z-index: 999; background: var(--orange); color: #fff; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; writing-mode: vertical-rl; padding: 14px 10px; border-radius: 3px 3px 0 0; text-decoration: none; box-shadow: -3px 0 12px rgba(249,115,22,0.3); transition: all 0.2s; }
+    .float-quote:hover { background: #ea6c08; color: #fff; }
+
+    /* BG COLORS */
+    .bg-steel { background: var(--steel); }
+    .bg-light-mfg { background: var(--white-bg); }
+    .text-orange { color: var(--orange); }
+    .text-blue { color: var(--blue); }
+    .cta-strip { background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%); }
+
+    /* SCROLL ANIMATION SUPPORT */
+    [data-aos] { transition-duration: 600ms !important; }
+
+    /* =====================================================
+       MOBILE RESPONSIVE — COMPREHENSIVE FIX
+       Breakpoints: 991 | 767 | 575 | 480 | 375
+       ===================================================== */
+
+    /* ── Shared mobile base ── */
+    @media (max-width: 991px) {
+      /* Navbar collapsed drawer */
+      .navbar-collapse {
+        background: #151e27;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 8px 0 16px;
+        margin-top: 8px;
+        border-radius: 0 0 4px 4px;
+      }
+      .navbar-collapse .nav-link {
+        padding: 11px 8px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        font-size: 0.9rem;
+      }
+      .navbar-collapse .nav-link:last-of-type { border-bottom: none; }
+      .btn-quote-nav {
+        display: block;
+        text-align: center;
+        margin: 14px 8px 4px;
+        padding: 12px !important;
+        font-size: 0.88rem;
+      }
+
+      /* All sections — override inline padding */
+      .hero-section         { min-height: 88vh !important; }
+      section[id],
+      section.cert-section  { padding: 72px 0 !important; }
+      section.process-section { padding: 72px 0 !important; }
+      section.contact-section { padding: 72px 0 !important; }
+
+      /* About image */
+      .about-img-wrap img   { height: 340px !important; }
+
+      /* Trust strip — 2 per row grid */
+      .trust-strip .container > div {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      .trust-divider        { display: none !important; }
+      .trust-strip-item     {
+        font-size: 0.78rem;
+        padding: 12px 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        justify-content: flex-start;
+        gap: 8px;
+      }
+      .trust-strip-item i   { font-size: 0.95rem; }
+
+      /* Float — hide vertical tab, shrink WA */
+      .float-quote          { display: none !important; }
+      .float-wa             { width: 52px; height: 52px; font-size: 1.35rem; bottom: 22px; right: 18px; }
+
+      /* CTA strip 1 — stack */
+      .cta-strip .container {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+      }
+      .cta-strip .container a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    /* ── 767px: Phones landscape / small tablets ── */
+    @media (max-width: 767px) {
+      /* Section padding */
+      section[id],
+      section.cert-section  { padding: 60px 0 !important; }
+      section.process-section { padding: 60px 0 !important; }
+      section.contact-section { padding: 60px 0 !important; }
+
+      /* Hero */
+      .hero-section         { min-height: 100svh !important; align-items: flex-end; padding-bottom: 56px; }
+      .hero-title           { font-size: clamp(2.2rem, 9vw, 3.5rem) !important; line-height: 1.08; }
+      .hero-sub             { font-size: 0.93rem; max-width: 100%; }
+
+      /* Hero CTA buttons — stack full width */
+      .hero-section .d-flex.flex-wrap.gap-3 {
+        flex-direction: column !important;
+        gap: 10px !important;
+      }
+      .hero-section .d-flex.flex-wrap.gap-3 a {
+        width: 100% !important;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Trust badges — smaller, still wrap */
+      .trust-badge          { font-size: 0.72rem; padding: 6px 10px; }
+
+      /* About */
+      .about-img-wrap img   { height: 260px !important; }
+      .about-stat .number   { font-size: 2rem; }
+
+      /* Filter buttons */
+      .filter-btn           { padding: 6px 12px; font-size: 0.74rem; }
+
+      /* Industry cards */
+      .industry-card        { padding: 20px 10px; }
+      .industry-card i      { font-size: 1.6rem; }
+      .industry-card h6     { font-size: 0.82rem; }
+
+      /* Process steps — tighter text */
+      .step-title           { font-size: 1rem; }
+      .step-desc            { font-size: 0.74rem; }
+      .step-num             { width: 44px; height: 44px; font-size: 1.1rem; margin-bottom: 10px; }
+      .step-icon            { font-size: 1.2rem; margin-bottom: 6px; }
+
+      /* USP cards */
+      .usp-card             { padding: 22px 18px; }
+
+      /* Review cards */
+      .review-card          { padding: 22px 18px; }
+
+      /* Gallery images */
+      .gallery-img          { height: 160px; }
+
+      /* CTA strip 2 */
+      div[style*="padding: 56px 0"] h2 { font-size: 1.9rem !important; }
+      div[style*="padding: 56px 0"] .d-flex.gap-3 {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+      }
+      div[style*="padding: 56px 0"] .d-flex.gap-3 a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Contact section */
+      .btn-submit, .btn-wa  { width: 100% !important; }
+      .contact-section .row.g-5 { --bs-gutter-y: 2rem; }
+
+      /* Section title */
+      .section-title        { font-size: clamp(1.8rem, 6.5vw, 2.5rem) !important; }
+
+      /* Section mb-5 spacing reduce */
+      .mb-5.text-center     { margin-bottom: 2rem !important; }
+
+      /* Footer bottom */
+      .footer-bottom        { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+      /* Fix offset-lg-1 footer column — no offset on mobile */
+      .offset-lg-1          { margin-left: 0 !important; }
+    }
+
+    /* ── 575px: Small phones ── */
+    @media (max-width: 575px) {
+      section[id],
+      section.cert-section  { padding: 52px 0 !important; }
+      section.process-section,
+      section.contact-section { padding: 52px 0 !important; }
+
+      /* Hero */
+      .hero-title           { font-size: clamp(1.9rem, 8vw, 2.6rem) !important; }
+      .hero-eyebrow         { font-size: 0.7rem; letter-spacing: 2px; }
+      .hero-sub             { font-size: 0.88rem; }
+      /* Trust badges — compact */
+      .hero-section .d-flex.flex-wrap.gap-2 { gap: 6px !important; }
+      .trust-badge          { font-size: 0.67rem; padding: 5px 8px; letter-spacing: 0.2px; }
+
+      /* Trust strip — stack single col */
+      .trust-strip .container > div {
+        grid-template-columns: 1fr !important;
+      }
+      .trust-strip-item     { font-size: 0.82rem; padding: 11px 16px; }
+
+      /* About image */
+      .about-img-wrap img   { height: 210px !important; }
+
+      /* Process — 2 col is Bootstrap default for col-6, keep it */
+      .step-num             { width: 38px; height: 38px; font-size: 1rem; }
+      .step-title           { font-size: 0.88rem; }
+      .step-desc            { font-size: 0.7rem; }
+
+      /* Cert cards */
+      .cert-card            { padding: 18px 12px; }
+      .cert-icon            { font-size: 2rem; margin-bottom: 8px; }
+      .cert-card h6         { font-size: 0.88rem; }
+      .cert-card p          { font-size: 0.75rem; }
+
+      /* Gallery */
+      .gallery-img          { height: 140px; }
+
+      /* Review card */
+      .review-card          { padding: 20px 16px; }
+      .review-text          { font-size: 0.83rem; }
+
+      /* Section title */
+      .section-title        { font-size: clamp(1.65rem, 7vw, 2.2rem) !important; }
+      .section-eyebrow      { font-size: 0.7rem; letter-spacing: 2px; }
+
+      /* Floating WA */
+      .float-wa             { width: 48px; height: 48px; font-size: 1.2rem; bottom: 16px; right: 14px; }
+
+      /* Footer brand */
+      .footer-brand         { font-size: 1.3rem; }
+      .footer-desc          { font-size: 0.82rem; }
+      .footer-title         { font-size: 0.9rem; }
+      .footer-link          { font-size: 0.82rem; }
+      .footer-bottom        { font-size: 0.74rem; }
+
+      /* Navbar brand */
+      .navbar-brand         { font-size: 1.3rem; }
+
+      /* Product cards */
+      .product-card img     { height: 170px; }
+
+      /* Contact info items */
+      .contact-info-item    { gap: 10px; padding: 12px 0; }
+      .contact-info-item i  { font-size: 0.95rem; }
+      .ci-value             { font-size: 0.85rem; }
+
+      /* Map */
+      .map-embed iframe     { height: 180px !important; }
+
+      /* Accordion */
+      .accordion-button     { font-size: 0.95rem; padding: 14px 16px; }
+      .accordion-body       { font-size: 0.83rem; padding: 12px 16px; }
+
+      /* USP icon */
+      .usp-icon-wrap        { width: 44px; height: 44px; }
+      .usp-icon-wrap i      { font-size: 1.1rem; }
+      .usp-card h5          { font-size: 1rem; }
+    }
+
+    /* ── 480px: Tight phones ── */
+    @media (max-width: 480px) {
+      .container            { padding-left: 14px !important; padding-right: 14px !important; }
+
+      /* Hero */
+      .hero-section         { padding-top: 90px !important; padding-bottom: 40px !important; }
+      .hero-title           { font-size: 1.8rem !important; }
+      .hero-sub             { font-size: 0.85rem; margin-bottom: 24px !important; }
+      .mb-5.d-flex.flex-wrap.gap-3 { margin-bottom: 24px !important; }
+
+      /* About stats — reduce number size */
+      .about-stat .number   { font-size: 1.75rem; }
+      .about-stat .label    { font-size: 0.72rem; }
+
+      /* Industry cards */
+      .industry-card        { padding: 16px 8px; }
+      .industry-card i      { font-size: 1.4rem; }
+      .industry-card h6     { font-size: 0.78rem; margin-top: 8px; }
+
+      /* Filter buttons — scroll container */
+      .d-flex.flex-wrap.gap-2.justify-content-center.mb-5 {
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        justify-content: flex-start !important;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .d-flex.flex-wrap.gap-2.justify-content-center.mb-5::-webkit-scrollbar { display: none; }
+      .filter-btn           { flex-shrink: 0; }
+
+      /* Gallery */
+      .gallery-img          { height: 120px; }
+
+      /* Process */
+      .process-section .text-center.mb-5 { margin-bottom: 1.5rem !important; }
+    }
+
+    /* ── 375px: iPhone SE, small Android ── */
+    @media (max-width: 375px) {
+      .hero-title           { font-size: 1.6rem !important; }
+      .hero-eyebrow         { display: none; }
+      .trust-badge          { font-size: 0.62rem; padding: 4px 7px; }
+      .section-title        { font-size: 1.5rem !important; }
+      .navbar-brand         { font-size: 1.15rem; }
+      .about-stat .number   { font-size: 1.6rem; }
+      .review-card::before  { font-size: 3.5rem; }
+      .gallery-img          { height: 110px; }
+      .industry-card        { padding: 14px 6px; }
+      .step-title           { font-size: 0.82rem; }
+      .step-num             { width: 34px; height: 34px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ======================== NAVBAR ======================== -->
+<nav class="navbar navbar-expand-lg sticky-top py-2">
+  <div class="container">
+    <a class="navbar-brand" href="#">Precision<span>Forge</span></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 py-2 py-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+        <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <a href="#contact" class="btn-quote-nav">Get Quote</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero-section" id="home">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7" data-aos="fade-up">
+        <p class="hero-eyebrow mb-3"><i class="fas fa-industry me-2"></i>Trusted Manufacturing Partner</p>
+        <h1 class="hero-title mb-4">
+          Precision<br><span>Manufacturing.</span><br>Scalable Solutions.
+        </h1>
+        <p class="hero-sub mb-5">Delivering high-quality industrial components with advanced CNC technology and strict quality standards — on time, every time.</p>
+
+        <div class="d-flex flex-wrap gap-3 mb-5">
+          <a href="#contact" class="btn btn-primary-hero text-white">
+            <i class="fas fa-file-alt me-2"></i>Get Free Quote
+          </a>
+          <a href="tel:+919876543210" class="btn btn-outline-hero text-white">
+            <i class="fas fa-phone me-2"></i>Call Now
+          </a>
+          <a href="https://wa.me/919876543210" target="_blank" class="btn btn-outline-hero text-white" style="border-color:#25D366;color:#25D366 !important;">
+            <i class="fab fa-whatsapp me-2"></i>WhatsApp
+          </a>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2">
+          <div class="trust-badge"><i class="fas fa-certificate me-1"></i>ISO 9001:2015</div>
+          <div class="trust-badge"><i class="fas fa-clock me-1"></i>10+ Years</div>
+          <div class="trust-badge"><i class="fas fa-users me-1"></i>500+ Clients</div>
+          <div class="trust-badge"><i class="fas fa-map-marker-alt me-1"></i>PAN India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TRUST STRIP ======================== -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
+      <div class="trust-strip-item"><i class="fas fa-certificate"></i>ISO 9001:2015 Certified</div>
+      <div class="trust-divider d-none d-md-block"></div>
+      <div class="trust-strip-item"><i class="fas fa-shipping-fast"></i>Fast & Reliable Delivery</div>
+      <div class="trust-divider d-none d-md-block"></div>
+      <div class="trust-strip-item"><i class="fas fa-cogs"></i>Custom Manufacturing</div>
+      <div class="trust-divider d-none d-md-block"></div>
+      <div class="trust-strip-item"><i class="fas fa-map-marked-alt"></i>PAN India Service</div>
+      <div class="trust-divider d-none d-md-block"></div>
+      <div class="trust-strip-item"><i class="fas fa-shield-alt"></i>100% Quality Assured</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== ABOUT ======================== -->
+<section class="py-6 bg-light-mfg" id="about" style="padding: 88px 0;">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="about-img-wrap">
+          <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80" alt="Factory Floor" class="img-fluid" style="height:420px; width:100%; object-fit:cover;" />
+          <div class="about-img-badge">Est. 2013</div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-title mb-3">Engineering Excellence,<br>Delivered at Scale</h2>
+        <div class="section-divider mb-4"></div>
+        <p class="text-secondary mb-4" style="font-size:0.93rem; line-height:1.8;">
+          PrecisionForge Industries is a leading ISO-certified manufacturing company specializing in high-precision industrial components. With state-of-the-art CNC machinery and a skilled team of engineers, we deliver quality manufacturing solutions to clients across India and beyond.
+        </p>
+        <div class="row g-4 mb-4">
+          <div class="col-6">
+            <div class="about-stat">
+              <div class="number">10+</div>
+              <div class="label">Years Experience</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="about-stat">
+              <div class="number">500+</div>
+              <div class="label">Clients Served</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="about-stat">
+              <div class="number">12K+</div>
+              <div class="label">Projects Completed</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="about-stat">
+              <div class="number">50T</div>
+              <div class="label">Monthly Capacity</div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary-hero text-white" style="display:inline-flex; align-items:center; gap:8px;">
+          <i class="fas fa-arrow-right"></i>Discuss Your Requirement
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PRODUCTS ======================== -->
+<section class="py-6 bg-white" id="products" style="padding: 88px 0;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-eyebrow">What We Make</p>
+      <h2 class="section-title">Products & Services</h2>
+      <div class="section-divider center mb-4"></div>
+      <p class="text-secondary mx-auto" style="max-width:520px; font-size:0.92rem;">High-precision components manufactured to your exact specifications using advanced machinery.</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-5" data-aos="fade-up">
+      <button class="filter-btn active" onclick="filterProducts(this, 'all')">All Products</button>
+      <button class="filter-btn" onclick="filterProducts(this, 'cnc')">CNC Parts</button>
+      <button class="filter-btn" onclick="filterProducts(this, 'fabrication')">Fabrication</button>
+      <button class="filter-btn" onclick="filterProducts(this, 'tools')">Tooling</button>
+      <button class="filter-btn" onclick="filterProducts(this, 'casting')">Casting</button>
+    </div>
+
+    <div class="row g-4" id="productsGrid">
+      <!-- Card 1 -->
+      <div class="col-sm-6 col-lg-3 product-item" data-cat="cnc" data-aos="fade-up" data-aos-delay="0">
+        <div class="product-card h-100">
+          <img src="https://images.unsplash.com/photo-1601534673798-74e5ffe4bdd6?w=400&q=80" alt="CNC Machined Parts" />
+          <div class="card-body">
+            <span class="cat-tag">CNC Parts</span>
+            <h5>CNC Machined Components</h5>
+            <p>High-precision components machined to tight tolerances for critical industrial applications.</p>
+            <a href="#" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-sm-6 col-lg-3 product-item" data-cat="fabrication" data-aos="fade-up" data-aos-delay="80">
+        <div class="product-card h-100">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80" alt="Metal Fabrication" />
+          <div class="card-body">
+            <span class="cat-tag">Fabrication</span>
+            <h5>Sheet Metal Fabrication</h5>
+            <p>Custom sheet metal cutting, bending, and welding for structural and enclosure applications.</p>
+            <a href="#" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-sm-6 col-lg-3 product-item" data-cat="tools" data-aos="fade-up" data-aos-delay="160">
+        <div class="product-card h-100">
+          <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=400&q=80" alt="Industrial Tooling" />
+          <div class="card-body">
+            <span class="cat-tag">Tooling</span>
+            <h5>Industrial Tooling & Dies</h5>
+            <p>Custom jigs, fixtures, and dies engineered for high-volume production environments.</p>
+            <a href="#" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-sm-6 col-lg-3 product-item" data-cat="casting" data-aos="fade-up" data-aos-delay="240">
+        <div class="product-card h-100">
+          <img src="https://images.unsplash.com/photo-1581094651181-35942459ef62?w=400&q=80" alt="Casting" />
+          <div class="card-body">
+            <span class="cat-tag">Casting</span>
+            <h5>Sand & Die Casting</h5>
+            <p>Precision sand and die casting for complex geometries in aluminum, brass, and iron alloys.</p>
+            <a href="#" class="btn-view">View Details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CTA STRIP 1 ======================== -->
+<div class="cta-strip py-4">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <div>
+      <p class="text-white fw-bold fs-5 mb-1" style="font-family:'Barlow Condensed',sans-serif;">Need a custom manufacturing solution?</p>
+      <p class="text-white mb-0" style="opacity:0.75; font-size:0.88rem;">Our engineers are ready to evaluate your requirement — fast turnaround guaranteed.</p>
+    </div>
+    <a href="#contact" class="btn btn-primary-hero text-white flex-shrink-0">
+      <i class="fas fa-file-alt me-2"></i>Request Quote Now
+    </a>
+  </div>
+</div>
+
+<!-- ======================== INDUSTRIES ======================== -->
+<section class="py-6 bg-light-mfg" id="industries" style="padding: 88px 0;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-eyebrow">Markets We Serve</p>
+      <h2 class="section-title">Industries We Power</h2>
+      <div class="section-divider center mb-4"></div>
+    </div>
+    <div class="row g-3" data-aos="fade-up">
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card">
+          <i class="fas fa-car"></i>
+          <h6>Automotive</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card">
+          <i class="fas fa-hard-hat"></i>
+          <h6>Construction</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card">
+          <i class="fas fa-bolt"></i>
+          <h6>Electrical</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card">
+          <i class="fas fa-tractor"></i>
+          <h6>Agriculture</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card">
+          <i class="fas fa-cog"></i>
+          <h6>Heavy Engg.</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card">
+          <i class="fas fa-pump-medical"></i>
+          <h6>Oil & Gas</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== MANUFACTURING PROCESS ======================== -->
+<section class="process-section py-5" id="process" style="padding: 88px 0 !important;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-eyebrow" style="color:var(--orange);">How We Work</p>
+      <h2 class="section-title text-white">Our Manufacturing Process</h2>
+      <div class="section-divider center mb-4" style="background:var(--orange);"></div>
+    </div>
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="0">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
+          <div class="step-title">Requirement<br>Analysis</div>
+          <div class="step-desc mt-2">Understand specs, volume & timeline</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="80">
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fas fa-drafting-compass"></i></div>
+          <div class="step-title">Design &<br>Engineering</div>
+          <div class="step-desc mt-2">CAD modeling & DFM review</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="160">
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fas fa-boxes"></i></div>
+          <div class="step-title">Material<br>Sourcing</div>
+          <div class="step-desc mt-2">Certified raw material procurement</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="240">
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-icon"><i class="fas fa-industry"></i></div>
+          <div class="step-title">Production</div>
+          <div class="step-desc mt-2">CNC machining & fabrication</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="320">
+        <div class="process-step">
+          <div class="step-num">05</div>
+          <div class="step-icon"><i class="fas fa-microscope"></i></div>
+          <div class="step-title">Quality<br>Testing</div>
+          <div class="step-desc mt-2">CMM inspection & QC reports</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
+        <div class="process-step">
+          <div class="step-num">06</div>
+          <div class="step-icon"><i class="fas fa-truck"></i></div>
+          <div class="step-title">Delivery</div>
+          <div class="step-desc mt-2">Packed & delivered on schedule</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== WHY CHOOSE US ======================== -->
+<section class="py-6 bg-white" style="padding: 88px 0;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-eyebrow">Our Strengths</p>
+      <h2 class="section-title">Why Choose PrecisionForge</h2>
+      <div class="section-divider center mb-4"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="usp-card">
+          <div class="usp-icon-wrap"><i class="fas fa-robot"></i></div>
+          <h5>Advanced CNC Machinery</h5>
+          <p>5-axis CNC machining centers capable of ±0.001mm tolerances for the most demanding components.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+        <div class="usp-card">
+          <div class="usp-icon-wrap"><i class="fas fa-users-cog"></i></div>
+          <h5>Skilled Workforce</h5>
+          <p>80+ engineers and machinists with 8+ years average experience across precision manufacturing.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+        <div class="usp-card">
+          <div class="usp-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+          <h5>Strict Quality Control</h5>
+          <p>In-house CMM lab, 100% inspection protocol, and full traceability on every batch shipped.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="usp-card">
+          <div class="usp-icon-wrap"><i class="fas fa-tags"></i></div>
+          <h5>Competitive Pricing</h5>
+          <p>Optimized processes and bulk material procurement allow us to offer market-best pricing.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
+        <div class="usp-card">
+          <div class="usp-icon-wrap"><i class="fas fa-calendar-check"></i></div>
+          <h5>On-Time Delivery</h5>
+          <p>97.4% on-time delivery rate backed by real-time production tracking and proactive communication.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+        <div class="usp-card">
+          <div class="usp-icon-wrap"><i class="fas fa-sliders-h"></i></div>
+          <h5>Custom Manufacturing</h5>
+          <p>From 1 prototype to 100,000 units — we scale with your production requirements seamlessly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CERTIFICATIONS ======================== -->
+<section class="cert-section py-5" style="padding: 80px 0 !important;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-eyebrow">Compliance & Standards</p>
+      <h2 class="section-title">Certifications & Compliance</h2>
+      <div class="section-divider center mb-4"></div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="0">
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+          <h6>ISO 9001:2015</h6>
+          <p>Quality Management System certified since 2014</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="80">
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-hard-hat"></i></div>
+          <h6>OHSAS 18001</h6>
+          <p>Occupational Health & Safety Standards</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="160">
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-leaf"></i></div>
+          <h6>ISO 14001</h6>
+          <p>Environmental Management compliance</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="240">
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-award"></i></div>
+          <h6>BIS Certified</h6>
+          <p>Bureau of Indian Standards certified facility</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== TESTIMONIALS ======================== -->
+<section class="py-6 bg-light-mfg" style="padding: 88px 0;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-eyebrow">Client Reviews</p>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="section-divider center mb-4"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="review-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="review-text">"PrecisionForge delivered 2,000 CNC components within tight tolerances and ahead of schedule. The quality was flawless — zero rejections. They're now our primary supplier."</p>
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=2563EB&color=fff&size=44" alt="Rahul Sharma" class="reviewer-avatar" />
+            <div>
+              <div class="reviewer-name">Rahul Sharma</div>
+              <div class="reviewer-role">Procurement Head, AutoTech Industries</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+        <div class="review-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="review-text">"Their sheet metal fabrication quality is exceptional. The team understood our requirements quickly, and the pricing was 18% lower than our previous vendor without compromising quality."</p>
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://ui-avatars.com/api/?name=Priya+Desai&background=F97316&color=fff&size=44" alt="Priya Desai" class="reviewer-avatar" />
+            <div>
+              <div class="reviewer-name">Priya Desai</div>
+              <div class="reviewer-role">Operations Manager, Electrix Solutions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+        <div class="review-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <p class="review-text">"We tested 3 vendors before choosing PrecisionForge. Their ISO certification, transparent QC process, and responsive team made the decision easy. Excellent partner for critical components."</p>
+          <div class="d-flex align-items-center gap-3">
+            <img src="https://ui-avatars.com/api/?name=Vikram+Joshi&background=1F2933&color=fff&size=44" alt="Vikram Joshi" class="reviewer-avatar" />
+            <div>
+              <div class="reviewer-name">Vikram Joshi</div>
+              <div class="reviewer-role">CTO, HeavyBuild Constructions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Logos -->
+    <div class="mt-5 pt-4 border-top" data-aos="fade-up">
+      <p class="text-center text-secondary mb-4" style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Trusted By Leading Companies</p>
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 opacity-50">
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:800; color:var(--steel);">AutoTech</span>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:800; color:var(--steel);">Electrix</span>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:800; color:var(--steel);">HeavyBuild</span>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:800; color:var(--steel);">AgroMech</span>
+        <span style="font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:800; color:var(--steel);">PetroChem</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== GALLERY ======================== -->
+<section class="py-6 bg-white" id="gallery" style="padding: 88px 0;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-eyebrow">Inside Our Factory</p>
+      <h2 class="section-title">Factory Gallery</h2>
+      <div class="section-divider center mb-4"></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="0">
+        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&q=80" alt="CNC Machine" class="gallery-img" />
+      </div>
+      <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="60">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Fabrication" class="gallery-img" />
+      </div>
+      <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="120">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Production Line" class="gallery-img" />
+      </div>
+      <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="0">
+        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=600&q=80" alt="Quality Testing" class="gallery-img" />
+      </div>
+      <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="60">
+        <img src="https://images.unsplash.com/photo-1581094651181-35942459ef62?w=600&q=80" alt="Workers" class="gallery-img" />
+      </div>
+      <div class="col-6 col-md-4" data-aos="zoom-in" data-aos-delay="120">
+        <img src="https://images.unsplash.com/photo-1601534673798-74e5ffe4bdd6?w=600&q=80" alt="Components" class="gallery-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CTA STRIP 2 ======================== -->
+<div style="background: linear-gradient(135deg, var(--steel) 0%, #2a3a4a 100%); padding: 56px 0;">
+  <div class="container text-center" data-aos="fade-up">
+    <p class="section-eyebrow" style="color:var(--orange);">Limited Slots This Quarter</p>
+    <h2 class="text-white mb-3" style="font-family:'Barlow Condensed',sans-serif; font-size:2.5rem; font-weight:800;">Ready to Start Your Project?</h2>
+    <p class="text-white mb-4" style="opacity:0.7; font-size:0.95rem;">Get a detailed quote within 24 hours. No commitment required.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="#contact" class="btn btn-primary-hero text-white"><i class="fas fa-file-alt me-2"></i>Get Free Quote</a>
+      <a href="tel:+919876543210" class="btn btn-outline-hero text-white"><i class="fas fa-phone me-2"></i>+91 98765 43210</a>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== FAQ ======================== -->
+<section class="py-6 bg-light-mfg" style="padding: 88px 0;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-eyebrow">Common Questions</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="section-divider center mb-4"></div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                What industries do you serve?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">We serve automotive, construction, electrical, agriculture, oil & gas, and heavy engineering sectors across India. Our components are used in critical applications where precision and reliability are non-negotiable.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Do you offer custom manufacturing?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. Custom manufacturing is our core strength. We work from your CAD drawings, samples, or detailed specifications. Minimum order can be as low as 1 prototype unit for development orders.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                What is your typical delivery timeline?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Prototypes: 7–14 working days. Production orders: 3–6 weeks depending on complexity and volume. We provide a firm timeline in our quote and maintain 97.4% on-time delivery rate.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                What materials do you work with?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">We work with mild steel, stainless steel, aluminum alloys, brass, copper, titanium, and various engineering plastics. We source certified materials with full traceability documentation.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                Do you provide quality inspection reports?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. Every order includes a full dimensional inspection report, material test certificate, and our ISO-certified quality approval sign-off. CMM reports are available for critical components.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== CONTACT / GET QUOTE ======================== -->
+<section class="contact-section py-5" id="contact" style="padding: 88px 0 !important;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <p class="section-eyebrow" style="color:var(--orange);">Let's Work Together</p>
+      <h2 class="section-title text-white">Get Your Free Quote</h2>
+      <div class="section-divider center" style="background:var(--orange); margin-bottom:16px;"></div>
+      <p class="text-white" style="opacity:0.6; font-size:0.9rem;">Fill in your requirements and we'll get back within 24 hours.</p>
+    </div>
+
+    <div class="row g-5">
+      <!-- FORM -->
+      <div class="col-lg-7" data-aos="fade-right">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-control" placeholder="Your name" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone Number *</label>
+            <input type="tel" class="form-control" placeholder="+91 00000 00000" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-control" placeholder="you@company.com" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Company Name</label>
+            <input type="text" class="form-control" placeholder="Your company" />
+          </div>
+          <div class="col-12">
+            <label class="form-label">Product / Requirement *</label>
+            <select class="form-select">
+              <option value="">Select product category</option>
+              <option>CNC Machined Parts</option>
+              <option>Sheet Metal Fabrication</option>
+              <option>Industrial Tooling & Dies</option>
+              <option>Sand & Die Casting</option>
+              <option>Custom / Other</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Describe Your Requirement *</label>
+            <textarea class="form-control" rows="4" placeholder="Material, dimensions, tolerances, quantity, delivery timeline..."></textarea>
+          </div>
+          <div class="col-md-6">
+            <button class="btn-submit">
+              <i class="fas fa-paper-plane me-2"></i>Submit Inquiry
+            </button>
+          </div>
+          <div class="col-md-6">
+            <a href="https://wa.me/919876543210?text=Hi, I need a manufacturing quote" target="_blank" class="btn-wa">
+              <i class="fab fa-whatsapp" style="font-size:1.1rem;"></i>WhatsApp Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="contact-info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <div class="ci-label">Factory Address</div>
+            <div class="ci-value">Plot No. 42, MIDC Industrial Area,<br>Pune, Maharashtra – 411018</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <div class="ci-label">Phone</div>
+            <div class="ci-value"><a href="tel:+919876543210" style="color:#fff;text-decoration:none;">+91 98765 43210</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="mailto:sales@precisionforge.in" style="color:#fff;text-decoration:none;">sales@precisionforge.in</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item border-0">
+          <i class="fas fa-clock"></i>
+          <div>
+            <div class="ci-label">Working Hours</div>
+            <div class="ci-value">Mon–Sat: 9:00 AM – 6:30 PM</div>
+          </div>
+        </div>
+
+        <!-- MAP -->
+        <div class="map-embed mt-4">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.2613173278896!2d73.85674!3d18.52043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1680000000000"
+            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+
+        <!-- Download Brochure -->
+        <a href="#" class="btn btn-outline-light w-100 mt-3 rounded-0" style="border:1px solid rgba(255,255,255,0.2); font-size:0.82rem; font-weight:700; text-transform:uppercase; letter-spacing:0.8px;">
+          <i class="fas fa-file-pdf me-2 text-orange"></i>Download Company Brochure (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-3">Precision<span>Forge</span></div>
+        <p class="footer-desc mb-4">ISO 9001:2015 certified precision manufacturing company delivering high-quality industrial components across India with advanced CNC technology and strict quality standards.</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 offset-lg-1">
+        <div class="footer-title">Company</div>
+        <a href="#about" class="footer-link">About Us</a>
+        <a href="#" class="footer-link">Careers</a>
+        <a href="#" class="footer-link">News & Updates</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-title">Products</div>
+        <a href="#" class="footer-link">CNC Parts</a>
+        <a href="#" class="footer-link">Sheet Metal</a>
+        <a href="#" class="footer-link">Tooling & Dies</a>
+        <a href="#" class="footer-link">Casting</a>
+      </div>
+      <div class="col-lg-3">
+        <div class="footer-title">Contact</div>
+        <p class="footer-link" style="cursor:default;">+91 98765 43210</p>
+        <p class="footer-link" style="cursor:default;">sales@precisionforge.in</p>
+        <p class="footer-link" style="cursor:default;">MIDC Area, Pune, MH – 411018</p>
+        <a href="#contact" class="btn btn-primary-hero text-white mt-2" style="font-size:0.78rem; padding:10px 20px;">
+          <i class="fas fa-file-alt me-2"></i>Get Free Quote
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom mt-5 pt-3 d-flex flex-wrap justify-content-between gap-2">
+      <span>© 2024 PrecisionForge Industries Pvt. Ltd. All rights reserved.</span>
+      <span>Privacy Policy | Terms of Use</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================== FLOATING ELEMENTS ======================== -->
+<a href="https://wa.me/919876543210" target="_blank" class="float-wa" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<a href="#contact" class="float-quote">Get Quote</a>
+
+<!-- ======================== SCRIPTS ======================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // Init AOS
+  AOS.init({ once: true, offset: 60, duration: 600 });
+
+  // Product filter
+  function filterProducts(btn, cat) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-item').forEach(item => {
+      item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'block' : 'none';
+    });
+  }
+
+  // Sticky navbar shadow on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    nav.style.boxShadow = window.scrollY > 40 ? '0 4px 24px rgba(0,0,0,0.35)' : 'none';
+  });
+
+  // Gallery lightbox (simple)
+  document.querySelectorAll('.gallery-img').forEach(img => {
+    img.addEventListener('click', () => {
+      const overlay = document.createElement('div');
+      overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;';
+      const bigImg = document.createElement('img');
+      bigImg.src = img.src.replace('w=600', 'w=1200');
+      bigImg.style.cssText = 'max-width:90vw;max-height:88vh;border:2px solid rgba(255,255,255,0.1);border-radius:3px;';
+      overlay.appendChild(bigImg);
+      overlay.addEventListener('click', () => overlay.remove());
+      document.body.appendChild(overlay);
+    });
+  });
+</script>
+</body>
+</html>
